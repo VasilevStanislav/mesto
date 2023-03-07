@@ -11,3 +11,7 @@
 - Адаптивная верстка с применением @media и относительных величин
 - JS
 - DOM
+
+## GH Pages
+[Ссылка на сайт](https://vasilevstanislav.github.io/mesto/)
+
