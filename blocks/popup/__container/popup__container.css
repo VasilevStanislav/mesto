@@ -1,0 +1,13 @@
+.popup__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 430px;
+}
+
+@media screen and (max-width: 710px) {
+  .popup__container {
+    width: 282px;
+  }
+}

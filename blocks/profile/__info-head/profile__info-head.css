@@ -1,0 +1,22 @@
+.profile__info-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 336px;
+}
+
+@media screen and (max-width: 710px) {
+  .profile__info-head {
+    margin: 26px 0 0;
+    width: 282px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
