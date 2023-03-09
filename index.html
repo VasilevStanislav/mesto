@@ -23,12 +23,12 @@
             <div class="profile__info">
               <div class="profile__info-head">
                 <h1 class="profile__username">Жак-Ив Кусто</h1>
-                <button class="profile__edit-button"></button>
+                <button class="profile__edit-button" type="button"></button>
               </div>
               <p class="profile__profession">Исследователь океана</p>
             </div>
           </div>
-          <button class="profile__add-button"></button>
+          <button class="profile__add-button" type="button"></button>
         </section>
         <section class="elements">
           <ul class="cards">
@@ -40,7 +40,7 @@
               >
               <div class="card__info">
                 <h2 class="card__title">Байкал</h2>
-                <button class="card__like card__like_active"></button>
+                <button class="card__like card__like_active" type="button"></button>
               </div>
             </li>
             <li class="card">
@@ -51,7 +51,7 @@
               >
               <div class="card__info">
                 <h2 class="card__title">Эльбрус</h2>
-                <button class="card__like"></button>
+                <button class="card__like" type="button"></button>
               </div>
             </li>
             <li class="card">
@@ -62,7 +62,7 @@
               >
               <div class="card__info">
                 <h2 class="card__title">Домбай</h2>
-                <button class="card__like"></button>
+                <button class="card__like" type="button"></button>
               </div>
             </li>
             <li class="card">
@@ -73,7 +73,7 @@
               >
               <div class="card__info">
                 <h2 class="card__title">Териберка</h2>
-                <button class="card__like"></button>
+                <button class="card__like" type="button"></button>
               </div>
             </li>
             <li class="card">
@@ -84,18 +84,18 @@
               >
               <div class="card__info">
                 <h2 class="card__title">Тулиновка</h2>
-                <button class="card__like"></button>
+                <button class="card__like" type="button"></button>
               </div>
             </li>
             <li class="card">
               <img
                 src="./images/Karachaevsk.png"
-                alt="Карачаево-Черкесия"
+                alt="Старинная постройка на фоне горного рельефа Карачаево-Черкесии"
                 class="card__image"
               >
               <div class="card__info">
                 <h2 class="card__title">Карачаево-Черкесия</h2>
-                <button class="card__like"></button>
+                <button class="card__like" type="button"></button>
               </div>
             </li>
           </ul>
@@ -107,25 +107,27 @@
     </div>
     <div class="popup">
       <div class="popup__container">
-        <form class="popup__form">
-          <h2 class="popup__form-title">Редактировать профиль</h2>
+        <h2 class="popup__form-title">Редактировать профиль</h2>
+        <form class="popup__form" name="edit-profile-popup">
           <input
             type="text"
             class="popup__input"
             id="username-input"
             value="Жак-Ив Кусто"
+            name="username-input"
           >
           <input
             type="text"
             class="popup__input"
             id="pofession-input"
             value="Исследователь океана"
+            name="pofession-input"
           >
-          <button class="popup__save-btn">Сохранить</button>
+          <button class="popup__save-btn" type="submit">Сохранить</button>
         </form>
         <button class="popup__close-bnt"></button>
       </div>
     </div>
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
