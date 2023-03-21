@@ -35,42 +35,25 @@ const popupProfile = document.querySelector(".popup_type_profile"); // Попа�
 const formPopupProfile = popupProfile.querySelector(".popup__form"); // Форма попапа редактирования профиля
 const nameInputPopupProfile = formPopupProfile.querySelector("#username-input"); // Инпут имения пользователя попапа редактирования профиля
 const professionInputPopupProfile = formPopupProfile.querySelector("#pofession-input"); // Инпут профессии пользователя попапа редактирования профиля
-// Кнопка открытия
 const profileEditBtn = document.querySelector(".profile__edit-button"); // Кнопка открытия попапа редактирования профиля
-// Кнопка закрытия
 const closeBtnPopupProfile = popupProfile.querySelector(".popup__close-bnt"); // Кнопка закрытия попапа редактирования профиля
 
 // Попап добавления карточки
 const popupAddCard = document.querySelector(".popup_type_add-card"); // Попап добавления карточки
-console.log(popupAddCard);
 const formAddCard = popupAddCard.querySelector(".popup__form"); // Форма попапа добавления карточки
-console.log(formAddCard);
 const nameInputAddCard = popupAddCard.querySelector("#place-name-input"); // Инпут имени попапа добавления карточки
 const linkInputAddCard = popupAddCard.querySelector("#place-link-input"); // Инпут ссылки на изображение пользователя попапа добавления карточки
-// Кнопка открытия
 const openBtnPopupAddCard = document.querySelector(".profile__add-button"); // Кнопка открытия попапа редактирования профиля
-// Кнопка закрытия
 const closeBtnPopupAddCard = popupAddCard.querySelector(".popup__close-bnt"); // Кнопка закрытия попапа добавления карточки
-
-
 
 // Попап изображения карточки
 const popupCardImage = document.querySelector(".popup_type_card-image"); // Попап добавления карточки
-console.log(popupCardImage);
-const popupCardImagePicture = popupCardImage.querySelector(".popup__image");
-console.log(popupCardImagePicture);
-const popupCardImageTitle = popupCardImage.querySelector(".popup__image-title");
-console.log(popupCardImageTitle);
-// Кнопка закрытия
+const popupCardImagePicture = popupCardImage.querySelector(".popup__image"); // Изображение попапа добавления карточки
+const popupCardImageTitle = popupCardImage.querySelector(".popup__image-title"); // Заголовок попапа добавления карточки
 const closeBtnPopupCardImage= popupCardImage.querySelector(".popup__close-bnt"); // Кнопка закрытия попапа добавления карточки
 
-
-
-const cardsList = document.querySelector(".cards");
-const cardsTemplate = document.querySelector("#card-template").content;
-
-// Загружаем шаблонные карточки путем вызова функии и педеачи в нее каждого элемента массива (объект с значениями заголовка, ссылки на изображение)
-initialCards.forEach(generateCard);
+const cardsList = document.querySelector(".cards"); // Грид-контейнер для хранения карточек
+const cardsTemplate = document.querySelector("#card-template").content; // Шаблон карточки
 
 // Функции
 
@@ -118,6 +101,12 @@ function handlePopupProfileFormSubmit(evt) {
 // Функция передачи значений инпут в новую карточку
 function handlePopupAddCard(evt) {
   evt.preventDefault();
+  //Чтобы не создавались пустые карточки
+    if (nameInputAddCard.value === "" || linkInputAddCard.value ==="") {
+      formAddCard.reset();
+      popupClose(popupAddCard);
+      return
+    }
   generateCard({ name: nameInputAddCard.value, link: linkInputAddCard.value });
   formAddCard.reset();
   popupClose(popupAddCard);
@@ -138,6 +127,9 @@ const popupClose = (popup) => {
 const popupOpen = (popup) => {
   popup.classList.add("popup_opened");
 };
+
+// Загрузка начальных карточек
+initialCards.forEach(generateCard);
 
 // Слушатели
 // Попап редактирования профиля
@@ -165,6 +157,8 @@ closeBtnPopupAddCard.addEventListener("click", function () {
 // Нажатие на кнопку сохранить в форме редактирования профиля
 formAddCard.addEventListener("submit", handlePopupAddCard);
 
+// Попап с изображение из карточки
+// Закрытие попапа с изображением из карточки
 closeBtnPopupCardImage.addEventListener("click", function () {
   popupClose(popupCardImage);
 });
