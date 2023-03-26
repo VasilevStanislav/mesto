@@ -154,8 +154,8 @@ closeButtons.forEach((button) => {
 // Попап редактирования профиля
 // Открытие попап по редактирования профиля по клику
 profileEditBtn.addEventListener("click", function () {
+  updateProfilePopupValue();
   openPopup(popupProfile);
-  updateProfilePopupValue;
 });
 
 // Нажатие на кнопку сохранить в форме редактирования профиля
